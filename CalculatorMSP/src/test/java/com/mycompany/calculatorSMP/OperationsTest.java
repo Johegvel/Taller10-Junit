@@ -132,7 +132,45 @@ public class OperationsTest {
         assertTrue(result.matches("\\d+(\\+|\\-|\\*|/)\\d+((\\+|\\-|\\*|/)\\d+)*"),"La formula no es valida");
     }
     
-    
+    @Test
+    @DisplayName("prueba con suma combinada")
+    public void testSolve05() {
+        System.out.println("Solve");
+        String formula = "10+15*10";
+        String expResult = "10+15*10=160";
+        String result = Operations.Solve(formula);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    @DisplayName("Prueba con resta combinada")
+    public void testSolve06() {
+        System.out.println("Solve");
+        String formula = "10-13+45/30";
+        String expResult = "10-13+45/30=-2";
+        String result = Operations.Solve(formula);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    @DisplayName("Prueba con multiplicacion combinada")
+    public void testSolve07() {
+        System.out.println("Solve");
+        String formula = "10*13*45/30";
+        String expResult = "10*13*45/30=195";
+        String result = Operations.Solve(formula);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    @DisplayName("Prueba con division combinada")
+    public void testSolve068() {
+        System.out.println("Solve");
+        String formula = "15/12+20/27";
+        String expResult = "15/12+20/27=1";
+        String result = Operations.Solve(formula);
+        assertEquals(expResult, result);
+    }
 
     
 }    
