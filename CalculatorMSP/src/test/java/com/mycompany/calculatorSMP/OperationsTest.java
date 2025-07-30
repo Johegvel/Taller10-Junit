@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.DisplayName;
 
 /**
  *
@@ -53,6 +54,104 @@ public class OperationsTest {
         String result = Operations.Solve(formula);
         assertEquals(expResult, result);
        
+    }
+   
+    
+    @Test
+    @DisplayName("Resolver suma con números de dos dígitos")
+    public void testSolveSumaDosDígitos() {
+        System.out.println("Solve - Suma dos dígitos");
+        String formula = "25+37";
+        String expResult = "25+37=62";
+        String result = Operations.Solve(formula);
+        assertEquals(expResult, result);
+        System.out.println("Resultado obtenido: " + result);
+    }
+    
+    @Test
+    @DisplayName("Resolver resta con números de dos dígitos")
+    public void testSolveRestaDosDígitos() {
+        System.out.println("Solve - Resta dos dígitos" );
+        String formula = "85-23";
+        String expResult = "85-23=62";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    
+     @Test
+    @DisplayName("Resolver multiplicación con números de dos dígitos")
+    public void testSolveMultiplicacionDosDígitos() {
+        System.out.println("Solve - Multiplicación dos dígitos");
+        String formula = "12*8";
+        String expResult = "12*8=96";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    @DisplayName("Resolver división con números de dos dígitos")
+    public void testSolveDivisionDosDígitos() {
+        System.out.println("Solve - División dos dígitos");
+        String formula = "84/12";
+        String expResult = "84/12=7";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    
+    @Test 
+    @DisplayName("Resolver operación con precedencia usando números de dos dígitos")
+    public void testSolvePrecedenciaDosDígitos() {
+        System.out.println("Solve - Precedencia dos dígitos");
+        String formula = "20+15*2";
+        String expResult = "20+15*2=50";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    @Test
+     @DisplayName("Resolver suma con números grandes del rango")
+    public void testSolveSumaGrandes() {
+        System.out.println("Solve - Suma números grandes");
+        String formula = "99+88";
+        String expResult = "99+88=187";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    @Test
+    @DisplayName("Resolver resta que da resultado negativo")
+    public void testSolveRestaNegativa() {
+        System.out.println("Solve - Resta resultado negativo");
+        String formula = "30-45";
+        String expResult = "30-45=-15";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    @DisplayName("Resolver división exacta con números de dos dígitos")
+    public void testSolveDivisionExacta() {
+        System.out.println("Solve - División exacta dos dígitos");
+        String formula = "96/24";
+        String expResult = "96/24=4";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    @DisplayName("Resolver multiplicación con resultado grande")
+    public void testSolveMultiplicacionGrande() {
+        System.out.println("Solve - Multiplicación resultado grande");
+        String formula = "25*4";
+        String expResult = "25*4=100";
+        String result = Operations.Solve(formula);
+        System.out.println("Resultado obtenido: " + result);
+        assertEquals(expResult, result);
     }
     
 }
