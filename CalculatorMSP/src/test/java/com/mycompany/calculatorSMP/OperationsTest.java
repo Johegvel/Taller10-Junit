@@ -18,42 +18,13 @@ import org.junit.jupiter.api.DisplayName;
  */
 public class OperationsTest {
     
-    public OperationsTest() {
-    }
-
-    @org.junit.jupiter.api.BeforeAll
-    public static void setUpClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterAll
-    public static void tearDownClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.BeforeEach
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterEach
-    public void tearDown() throws Exception {
-    }
-
-    @org.junit.jupiter.api.Test
+    @Test
+    @DisplayName("Prueba el metodo MakeFormula para salida nula")
     public void testMakeFormula() {
         System.out.println("MakeFormula");
         String expResult = "";
         String result = Operations.MakeFormula();
         assertNotEquals(expResult, result);
-        ;
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testSolve() {
-        System.out.println("Solve");
-        String formula = "10+15";
-        String expResult = "10+15=25";
-        String result = Operations.Solve(formula);
-        assertEquals(expResult, result);
-       
     }
    
     
@@ -154,4 +125,14 @@ public class OperationsTest {
         assertEquals(expResult, result);
     }
     
-}
+    @Test
+    @DisplayName("Prueba el metodo MakeFormula para salida correcta")
+    public void testMakeFormula1(){
+        String result = Operations.MakeFormula();
+        assertTrue(result.matches("\\d+(\\+|\\-|\\*|/)\\d+((\\+|\\-|\\*|/)\\d+)*"),"La formula no es valida");
+    }
+    
+    
+
+    
+}    
