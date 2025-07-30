@@ -35,40 +35,24 @@ public class OperationsTest {
     @org.junit.jupiter.api.AfterEach
     public void tearDown() throws Exception {
     }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
 
     @org.junit.jupiter.api.Test
     public void testMakeFormula() {
         System.out.println("MakeFormula");
         String expResult = "";
         String result = Operations.MakeFormula();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        assertNotEquals(expResult, result);
+        ;
     }
 
     @org.junit.jupiter.api.Test
     public void testSolve() {
         System.out.println("Solve");
-        String formula = "";
-        String expResult = "";
+        String formula = "10+15";
+        String expResult = "10+15=25";
         String result = Operations.Solve(formula);
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+       
     }
     
 }
